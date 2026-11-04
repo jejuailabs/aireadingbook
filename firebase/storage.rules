@@ -1,0 +1,19 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    function owns(uid) { return request.auth != null && request.auth.uid == uid; }
+    match /users/{uid}/uploads/{fileId} {
+      allow read, delete: if owns(uid);
+      allow create, update: if owns(uid) && request.resource.size < 100 * 1024 * 1024
+        && request.resource.contentType.matches('(application/pdf|text/plain|text/markdown|image/jpeg|image/png|image/webp)');
+    }
+    match /users/{uid}/recordings/{fileId} {
+      allow read, delete: if owns(uid);
+      allow create, update: if owns(uid) && request.resource.size < 100 * 1024 * 1024
+        && request.resource.contentType.matches('audio/(webm|mp4|mpeg|ogg)(;.*)?');
+    }
+    // Server issues signed URLs after checking publication state and user access.
+    match /catalog/{allPaths=**} { allow read, write: if false; }
+    match /{allPaths=**} { allow read, write: if false; }
+  }
+}

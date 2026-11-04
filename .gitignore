@@ -1,0 +1,11 @@
+node_modules/
+*.log
+.env
+.env.*
+!.env.example
+.vercel/
+.firebase/
+firebase-debug.log
+artifacts/
+data/
+*.local

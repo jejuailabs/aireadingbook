@@ -1,0 +1,8 @@
+{
+  "version": 1,
+  "settings": {"voice":"Sohee","language":"Korean","chunkChars":600},
+  "books": [
+    {"id":"offline-test-1","title":"오프라인 검증 원고","pages":["작은 책을 펼쳤습니다. 창가의 햇빛이 조용히 페이지 위에 내려앉았습니다."]},
+    {"id":"offline-test-2","title":"두 번째 검증 원고","pages":["한 문장을 읽고 잠시 쉬었습니다. 오늘의 이야기는 여기서 시작합니다."]}
+  ]
+}

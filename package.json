@@ -1,0 +1,23 @@
+{
+  "name": "folio-local-library",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node server.mjs",
+    "dev": "node server.mjs",
+    "build": "node scripts/check.mjs",
+    "prepare-assets": "node prepare-assets.mjs",
+    "check": "node scripts/check.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "narration:prepare": "node --env-file=.env.local scripts/narration-batch.mjs prepare",
+    "narration:run": "node --env-file=.env.local scripts/narration-batch.mjs run",
+    "narration:report": "node --env-file=.env.local scripts/narration-batch.mjs report",
+    "narration:cancel": "node --env-file=.env.local scripts/narration-batch.mjs cancel",
+    "narration:inspect": "node --env-file=.env.local scripts/inspect-runpod.mjs"
+  },
+  "dependencies": {
+    "pdfjs-dist": "6.5.438",
+    "page-flip": "2.0.7"
+  }
+}
