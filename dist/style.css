@@ -19,7 +19,7 @@ dialog{border:1px solid #d9dfd2;border-radius:12px;color:var(--ink);box-shadow:0
 @media(min-width:761px) and (max-width:1050px){.document-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.cover-wrap{height:250px}.designed-cover strong{font-size:27px}.paper-art{width:130px;height:175px}.intro>div:first-child{max-width:65%}.intro h1{font-size:27px}}
 
 .reader-stage{overflow:hidden;touch-action:none}
-#book-mount{transform-origin:center center;will-change:transform}
+#book-mount{transform-origin:center center}
 .reader-stage.is-zoomed{cursor:grab}
 .reader-stage.is-zoomed #book-mount{pointer-events:none}
 .reader-stage.is-dragging{cursor:grabbing;user-select:none}
